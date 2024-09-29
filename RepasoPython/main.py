@@ -16,7 +16,7 @@ contador = 0
 imagenes_usadas = []
 dir_calificaciones = r"C:\Users\unaip\PycharmProjects\repaso\RepasoPython\calificaciones"
 
-resultado_label = ttk.Label(screen1, text="", wraplength=400)
+resultado_label = ttk.Label(screen1, text="")
 resultado_label.pack(pady=10)
 
 imagen_calificacion_label = ttk.Label(screen1)
@@ -51,7 +51,7 @@ def mostrar_resultado():
     resultado_label.config(text=f"Tu calificación es: {contador} - {mensaje}")
 
     imagen = Image.open(imagen_calificacion)
-    imagen = imagen.resize((200, 200))
+    imagen = imagen.resize((400, 400))
     photo = ImageTk.PhotoImage(imagen)
     imagen_calificacion_label.config(image=photo)
     imagen_calificacion_label.image = photo
@@ -59,7 +59,7 @@ def mostrar_resultado():
 def comprobar():
     global contador, intentos
 
-    respuesta_usuario = respuesta.get().strip().lower()
+    respuesta_usuario = respuesta.get().lower()
     nombre_imagen = os.path.splitext(imagenes_usadas[intentos])[0]
 
     if respuesta_usuario == nombre_imagen.lower():
@@ -113,3 +113,4 @@ cerrar.pack(pady=10)
 actualizar_imagen()
 
 screen1.mainloop()
+
