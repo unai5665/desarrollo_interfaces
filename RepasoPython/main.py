@@ -6,7 +6,7 @@ from PIL import Image, ImageTk
 
 screen1 = tk.Tk()
 screen1.title("Adivina el Hiragana")
-screen1.geometry("450x450")
+screen1.geometry("600x600")
 
 dirhiragana = r"C:\Users\unaip\PycharmProjects\repaso\RepasoPython\hiragana"
 hiraganas = os.listdir(dirhiragana)
